@@ -7,8 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
-const hostname = "0.0.0.0";
-const port = 80;
+const port = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -85,6 +84,6 @@ function broadcastUserList() {
   });
 }
 
-server.listen(port, hostname, () => {
+server.listen(port, () => {
   console.log("Server is listening");
 });
